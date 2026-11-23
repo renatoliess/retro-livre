@@ -28,9 +28,43 @@ export type Jogo = z.infer<typeof jogoSchema>;
  * (a mensagem aparece no erro do `npm run build`).
  */
 export function motivoBloqueio(jogo: Jogo): string | null {
-  // TODO(human): implementar a regra de licença.
+  const licenca = jogo.licenca.trim().toUpperCase();
+
+  // Lista fechada: só entra o que foi conferido como livre para uso comercial.
+  if (!LICENCAS_PERMITIDAS.has(licenca)) {
+    const dica = /\b(NC|ND)\b|NONCOMMERCIAL|NO-?DERIV/.test(licenca)
+      ? ' Licenças "não comercial" (NC) ou "sem derivações" (ND) não servem, porque o site tem anúncios.'
+      : ` Aceitas: ${[...LICENCAS_PERMITIDAS].join(', ')}.`;
+    return `licença "${jogo.licenca}" não está na lista permitida.${dica}`;
+  }
+
+  if (!jogo.prova_url.startsWith('https://')) {
+    return 'a prova da liberação precisa ser um link https.';
+  }
+
+  if (jogo.prova_data.getTime() > Date.now()) {
+    return 'a data da prova está no futuro.';
+  }
+
   return null;
 }
+
+/** Licenças aceitas (em maiúsculas). "PERMISSAO-AUTOR" exige link para o registro da permissão. */
+const LICENCAS_PERMITIDAS = new Set([
+  'CC0-1.0',
+  'CC-BY-3.0',
+  'CC-BY-4.0',
+  'CC-BY-SA-3.0',
+  'CC-BY-SA-4.0',
+  'MIT',
+  'BSD-2-CLAUSE',
+  'BSD-3-CLAUSE',
+  'ZLIB',
+  'GPL-2.0',
+  'GPL-3.0',
+  'PUBLIC-DOMAIN',
+  'PERMISSAO-AUTOR',
+]);
 
 const jogos = defineCollection({
   // Arquivos começando com "_" (como _modelo.json) são ignorados.

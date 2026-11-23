@@ -1,0 +1,83 @@
+---
+import { t, url, outroIdioma, type Lang } from '../i18n';
+import { REPO_URL, EMULATORJS_URL } from '../site';
+
+interface Props {
+  lang: Lang;
+  titulo?: string;
+  descricao?: string;
+}
+const { lang, titulo, descricao } = Astro.props;
+const outro = outroIdioma(lang);
+const caminhoOutro = Astro.url.pathname.replace(`/${lang}/`, `/${outro}/`);
+const tituloFinal = titulo ? `${titulo} · ${t(lang, 'site.nome')}` : t(lang, 'site.nome');
+---
+<!doctype html>
+<html lang={lang === 'pt' ? 'pt-BR' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{tituloFinal}</title>
+    <meta name="description" content={descricao ?? t(lang, 'site.lema')} />
+    <link rel="alternate" hreflang={outro === 'pt' ? 'pt-BR' : 'en'} href={caminhoOutro} />
+  </head>
+  <body>
+    <header class="topo">
+      <a class="marca" href={url(`/${lang}/`)}>
+        <span class="marca-icone" aria-hidden="true">▶</span>{t(lang, 'site.nome')}
+      </a>
+      <nav>
+        <a href={url(`/${lang}/`)}>{t(lang, 'nav.inicio')}</a>
+        <a href={url(`/${lang}/sobre/`)}>{t(lang, 'nav.sobre')}</a>
+        <a href={caminhoOutro} hreflang={outro}>{t(lang, 'nav.idioma')}</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="rodape">
+      <a href={REPO_URL}>{t(lang, 'rodape.codigo')}</a>
+      <a href={EMULATORJS_URL}>{t(lang, 'rodape.emulador')}</a>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --fundo: #14121f;
+    --painel: #1f1c30;
+    --borda: #3a3558;
+    --texto: #ece9f7;
+    --suave: #a9a3c7;
+    --retro: #ff6b5b;
+    --edu: #4fd1a5;
+    --biblia: #f5c451;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font: 16px/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  a { color: inherit; }
+  h1, h2, h3, .marca { font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace; letter-spacing: 0.02em; }
+  main { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+</style>
+
+<style>
+  .topo {
+    display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+    padding: 0.9rem 1.25rem; border-bottom: 2px solid var(--borda); background: var(--painel);
+  }
+  .marca { font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+  .marca-icone { color: var(--retro); margin-right: 0.4rem; }
+  nav { display: flex; gap: 1.1rem; }
+  nav a { color: var(--suave); text-decoration: none; }
+  nav a:hover { color: var(--texto); }
+  .rodape {
+    display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center;
+    padding: 1.5rem; border-top: 2px solid var(--borda); color: var(--suave); font-size: 0.875rem;
+  }
+</style>

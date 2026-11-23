@@ -1,0 +1,21 @@
+---
+// Página raiz: manda o visitante para /pt/ ou /en/ conforme o idioma do navegador.
+import { url } from '../i18n';
+const pt = url('/pt/');
+const en = url('/en/');
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Retrô Livre</title>
+    <link rel="canonical" href={pt} />
+    <script is:inline define:vars={{ pt, en }}>
+      location.replace(/^pt\b/i.test(navigator.language) ? pt : en);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${pt}`} /></noscript>
+  </head>
+  <body>
+    <p><a href={pt}>Português</a> · <a href={en}>English</a></p>
+  </body>
+</html>

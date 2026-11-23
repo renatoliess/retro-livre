@@ -1,0 +1,15 @@
+{
+  "titulo": "Nome do jogo",
+  "console": "nes",
+  "autor": "Nome do autor ou estúdio",
+  "ano": 2024,
+  "licenca": "CC-BY-4.0",
+  "prova_url": "https://exemplo.itch.io/jogo",
+  "prova_data": "2026-11-22",
+  "rom": "nome-do-arquivo.nes",
+  "capa": "nome-da-capa.png",
+  "descricao": {
+    "pt": "Texto original nosso, com pelo menos 80 caracteres: história do jogo, como jogar, dicas e quem é o autor.",
+    "en": "Our own original text, at least 80 characters long: the game's story, how to play, tips and who the author is."
+  }
+}

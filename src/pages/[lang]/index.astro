@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { t, url, langPaths, type Lang } from '../../i18n';
+import { CONSOLES } from '../../consoles';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const jogos = (await getCollection('jogos')).sort((a, b) => a.data.titulo.localeCompare(b.data.titulo));
+---
+<Base lang={lang}>
+  <section class="abertura">
+    <h1>{t(lang, 'site.nome')}</h1>
+    <p>{t(lang, 'site.lema')}</p>
+  </section>
+
+  <section class="secao" style="--cor: var(--retro)">
+    <h2>{t(lang, 'secao.retro')}</h2>
+    <p class="desc">{t(lang, 'secao.retro.desc')}</p>
+    {jogos.length === 0 ? (
+      <p class="vazio">{t(lang, 'catalogo.vazio')}</p>
+    ) : (
+      <ul class="grade">
+        {jogos.map((j) => (
+          <li>
+            <a href={url(`/${lang}/jogo/${j.id}/`)}>
+              <strong>{j.data.titulo}</strong>
+              <span>{CONSOLES[j.data.console].nome} · {j.data.ano}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </section>
+
+  <div class="dupla">
+    <section class="secao" style="--cor: var(--edu)">
+      <h2>{t(lang, 'secao.educativos')}</h2>
+      <p class="desc">{t(lang, 'secao.educativos.desc')}</p>
+      <p class="selo">{t(lang, 'catalogo.embreve')}</p>
+    </section>
+    <section class="secao" style="--cor: var(--biblia)">
+      <h2>{t(lang, 'secao.biblicos')}</h2>
+      <p class="desc">{t(lang, 'secao.biblicos.desc')}</p>
+      <p class="selo">{t(lang, 'catalogo.embreve')}</p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .abertura { padding: 2rem 0 1rem; }
+  .abertura h1 { font-size: clamp(2rem, 6vw, 3.25rem); margin: 0; }
+  .abertura p { color: var(--suave); font-size: 1.15rem; margin: 0.5rem 0 0; }
+  .secao {
+    margin-top: 1.75rem; padding: 1.25rem 1.5rem; background: var(--painel);
+    border: 2px solid var(--borda); border-top: 4px solid var(--cor); border-radius: 6px;
+  }
+  .secao h2 { margin: 0; color: var(--cor); }
+  .desc { color: var(--suave); margin: 0.35rem 0 1rem; }
+  .vazio { margin: 0; }
+  .selo {
+    display: inline-block; margin: 0; padding: 0.15rem 0.6rem; font-size: 0.8rem;
+    border: 1px solid var(--cor); color: var(--cor); border-radius: 3px;
+  }
+  .dupla { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 1.5rem; }
+  .grade { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+  .grade a { display: block; padding: 0.8rem; border: 1px solid var(--borda); border-radius: 4px; text-decoration: none; }
+  .grade a:hover { border-color: var(--cor); }
+  .grade span { display: block; color: var(--suave); font-size: 0.85rem; }
+</style>

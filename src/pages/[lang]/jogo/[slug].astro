@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import { t, LANGS, type Lang } from '../../../i18n';
+import { CONSOLES } from '../../../consoles';
+
+export async function getStaticPaths() {
+  const jogos = await getCollection('jogos');
+  return LANGS.flatMap((lang) => jogos.map((jogo) => ({ params: { lang, slug: jogo.id }, props: { jogo } })));
+}
+const lang = Astro.params.lang as Lang;
+const { jogo } = Astro.props;
+const d = jogo.data;
+---
+<Base lang={lang} titulo={d.titulo} descricao={d.descricao[lang].slice(0, 155)}>
+  <h1>{d.titulo}</h1>
+  <div class="player" role="img" aria-label={d.titulo}>
+    <p>{t(lang, 'jogo.player.embreve')}</p>
+  </div>
+  <p class="descricao">{d.descricao[lang]}</p>
+  <dl class="ficha">
+    <dt>{t(lang, 'jogo.console')}</dt><dd>{CONSOLES[d.console].nome}</dd>
+    <dt>{t(lang, 'jogo.autor')}</dt><dd>{d.autor}</dd>
+    <dt>{t(lang, 'jogo.ano')}</dt><dd>{d.ano}</dd>
+    <dt>{t(lang, 'jogo.licenca')}</dt><dd>{d.licenca}</dd>
+    <dt>{t(lang, 'jogo.prova')}</dt><dd><a href={d.prova_url} rel="nofollow">{new URL(d.prova_url).hostname}</a></dd>
+  </dl>
+</Base>
+
+<style>
+  .player {
+    aspect-ratio: 4 / 3; max-width: 768px; display: grid; place-items: center;
+    background: #000; border: 2px solid var(--borda); border-radius: 6px; color: var(--suave);
+  }
+  .descricao { max-width: 68ch; }
+  .ficha { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 1rem; }
+  .ficha dt { color: var(--suave); }
+  .ficha dd { margin: 0; }
+</style>

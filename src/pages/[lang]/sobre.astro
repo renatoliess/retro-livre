@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t, langPaths, type Lang } from '../../i18n';
+import { REPO_URL } from '../../site';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+---
+<Base lang={lang} titulo={t(lang, 'nav.sobre')}>
+  <article class="texto">
+    <h1>{t(lang, 'sobre.titulo')}</h1>
+    <p>{t(lang, 'sobre.p1')}</p>
+    <p>{t(lang, 'sobre.p2')}</p>
+    <p>{t(lang, 'sobre.p3')}</p>
+    <p>{t(lang, 'sobre.p4')}</p>
+    <p><a href={`${REPO_URL}/issues`}>{t(lang, 'sobre.remocao')}</a></p>
+  </article>
+</Base>
+
+<style>
+  .texto { max-width: 68ch; }
+</style>

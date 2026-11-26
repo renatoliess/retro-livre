@@ -1,0 +1,14 @@
+{
+  "titulo": "Libbet and the Magic Floor",
+  "console": "gb",
+  "autor": "Damian Yerrick (pinobatch), a partir de Magic Floor de Martin Korth",
+  "ano": 2018,
+  "licenca": "ZLIB",
+  "prova_url": "https://github.com/pinobatch/libbet",
+  "rom": "libbet.gb",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Quebra-cabeça em que Libbet rola por um salão de piso mágico com quatro tons de cinza. Ela só pode ir para um piso do mesmo tom ou do tom seguinte, e cada passo deixa um rastro. Becos sem saída escondem alçapões que a mandam de volta ao começo. Para vencer, cubra quase todos os caminhos e chegue à saída. Ótimo para treinar planejamento.",
+    "en": "A puzzle game where Libbet rolls across a magic floor with four shades of gray. She can only move onto a tile of the same shade or the next one, and every move leaves a trail. Dead ends hide trapdoors that send her back to the start. To win, cover almost every path and reach the exit. Great for practicing planning ahead."
+  }
+}

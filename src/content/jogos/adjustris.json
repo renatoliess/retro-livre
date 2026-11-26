@@ -1,0 +1,14 @@
+{
+  "titulo": "Adjustris",
+  "console": "gb",
+  "autor": "Dave VanEe (tbsp)",
+  "ano": 2017,
+  "licenca": "CC0-1.0",
+  "prova_url": "https://github.com/tbsp/Adjustris",
+  "rom": "adjustris.gb",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Jogo de blocos que caem, feito para uma competição de programação de Game Boy. Mova e gire as peças para completar linhas; a cada dez linhas o nível e a velocidade sobem. O diferencial é o editor de peças: você desenha seus próprios formatos e eles ficam salvos no cartucho. Dedicado ao domínio público pelo autor.",
+    "en": "A falling-blocks game made for a Game Boy coding competition. Move and rotate pieces to clear lines; every ten lines the level and speed go up. Its twist is the piece editor: design your own shapes and they are saved on the cartridge. Dedicated to the public domain by its author."
+  }
+}

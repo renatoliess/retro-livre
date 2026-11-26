@@ -1,0 +1,14 @@
+{
+  "titulo": "Stallar",
+  "console": "nes",
+  "autor": "Wendel Scardua",
+  "ano": 2022,
+  "licenca": "MIT",
+  "prova_url": "https://github.com/wendelscardua/stallar",
+  "rom": "stallar.nes",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Jogo de NES criado em poucos dias para a Ludum Dare 50, uma das maiores competições de criação de jogos do mundo, cujo tema era adiar o inevitável. O código está sob licença MIT, e os efeitos sonoros e a música estão em domínio público.",
+    "en": "An NES game created in just a few days for Ludum Dare 50, one of the world's biggest game jams, whose theme was delaying the inevitable. Its code is under the MIT license, and its sound effects and music are in the public domain."
+  }
+}

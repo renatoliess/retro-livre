@@ -25,5 +25,10 @@
   "sobre.p2": "Só publicamos jogos com licença livre ou com permissão escrita do autor. Jogos comerciais de empresas como Nintendo ou SNK não fazem parte do catálogo.",
   "sobre.p3": "Os jogos educativos e bíblicos são criados pela nossa equipe. Os textos bíblicos citados vêm de traduções em domínio público.",
   "sobre.p4": "O site se mantém com anúncios do Google, posicionados fora da área do jogo.",
-  "sobre.remocao": "É autor de um jogo daqui e quer que ele saia do ar? Abra um pedido no repositório do site e ele será removido em até 48 horas."
+  "sobre.remocao": "É autor de um jogo daqui e quer que ele saia do ar? Abra um pedido no repositório do site e ele será removido em até 48 horas.",
+  "nav.creditos": "Créditos",
+  "creditos.titulo": "Créditos e licenças",
+  "creditos.intro": "Cada jogo pertence ao seu autor e é publicado aqui sob a licença indicada. Agradecemos a todos que liberaram seus jogos.",
+  "creditos.jogos": "Jogos",
+  "creditos.software": "Software usado no site"
 }

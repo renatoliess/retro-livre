@@ -1,0 +1,14 @@
+{
+  "titulo": "Undercooked",
+  "console": "gb",
+  "autor": "qguv (código e música) e Rachel (arte)",
+  "ano": 2019,
+  "licenca": "GPL-3.0",
+  "prova_url": "https://github.com/qguv/undercooked",
+  "rom": "undercooked.gb",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Um jogo de cozinha para o Game Boy original, escrito em assembly. Prepare e sirva pratos contra o relógio numa cozinha em pixel art de quatro tons. É uma versão ainda em desenvolvimento, publicada pelos autores como pré-lançamento, ideal para partidas rápidas.",
+    "en": "A cooking game for the original Game Boy, written in assembly. Prepare and serve dishes against the clock in a four-shade pixel art kitchen. It is still in development and published by its authors as a pre-release, perfect for quick sessions."
+  }
+}

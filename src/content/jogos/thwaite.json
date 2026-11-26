@@ -1,0 +1,14 @@
+{
+  "titulo": "Thwaite",
+  "console": "nes",
+  "autor": "Damian Yerrick (pinobatch)",
+  "ano": 2011,
+  "licenca": "GPL-3.0",
+  "prova_url": "https://github.com/pinobatch/thwaite-nes",
+  "rom": "thwaite.nes",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Defesa antimísseis para NES. Mísseis caem sobre uma cidadezinha e você precisa derrubá-los com fogos de artifício antes que acertem as casas. A dificuldade aumenta a cada rodada, exigindo pontaria e decisão rápida sobre qual ameaça atacar primeiro. Parte da trilha usa música de Beethoven, em domínio público.",
+    "en": "Missile defense for the NES. Missiles rain down on a small town and you must shoot them down with fireworks before they hit the houses. Each round gets harder, demanding good aim and quick choices about which threat to stop first. Part of the soundtrack uses public-domain music by Beethoven."
+  }
+}

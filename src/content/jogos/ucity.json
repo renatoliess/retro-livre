@@ -1,0 +1,14 @@
+{
+  "titulo": "µCity",
+  "console": "gbc",
+  "autor": "Antonio Niño Díaz (AntonioND)",
+  "ano": 2017,
+  "licenca": "GPL-3.0",
+  "prova_url": "https://github.com/AntonioND/ucity",
+  "rom": "ucity.gbc",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Um construtor de cidades completo no Game Boy Color. Você divide o mapa em zonas residenciais, comerciais e industriais, abre ruas, leva energia e serviços e cuida do caixa da prefeitura enquanto a população cresce. As cidades ficam salvas no próprio jogo, então dá para voltar e continuar de onde parou. Código sob GPL-3.0, gráficos e músicas sob CC-BY-SA 4.0.",
+    "en": "A full city builder on the Game Boy Color. Zone residential, commercial and industrial areas, lay roads, bring power and services, and keep the city budget healthy as the population grows. Cities are saved inside the game, so you can come back and keep building. Code under GPL-3.0, graphics and music under CC-BY-SA 4.0."
+  }
+}

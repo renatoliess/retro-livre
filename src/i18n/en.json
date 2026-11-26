@@ -25,5 +25,10 @@
   "sobre.p2": "We only publish games under a free license or with the author's written permission. Commercial games from companies such as Nintendo or SNK are not part of the catalog.",
   "sobre.p3": "The educational and Bible games are made by our team. Quoted Bible text comes from public-domain translations.",
   "sobre.p4": "The site is supported by Google ads, placed outside the game area.",
-  "sobre.remocao": "Are you the author of a game listed here and want it taken down? Open a request in the site's repository and it will be removed within 48 hours."
+  "sobre.remocao": "Are you the author of a game listed here and want it taken down? Open a request in the site's repository and it will be removed within 48 hours.",
+  "nav.creditos": "Credits",
+  "creditos.titulo": "Credits and licenses",
+  "creditos.intro": "Each game belongs to its author and is published here under the license shown. Thanks to everyone who released their games.",
+  "creditos.jogos": "Games",
+  "creditos.software": "Software used on this site"
 }

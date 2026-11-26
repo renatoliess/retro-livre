@@ -1,0 +1,14 @@
+{
+  "titulo": "RHDE: Furniture Fight",
+  "console": "nes",
+  "autor": "Damian Yerrick (pinobatch)",
+  "ano": 2011,
+  "licenca": "PERMISSAO-AUTOR",
+  "prova_url": "https://raw.githubusercontent.com/pinobatch/rhde-nes/master/LICENSE.txt",
+  "rom": "rhde.nes",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "Estratégia em tempo real com tema doméstico: em vez de exércitos, você disputa espaço montando e defendendo a sua casa com móveis. Um jogo incomum e criativo para NES, que exige planejamento e reflexo ao mesmo tempo. O autor permite copiar e distribuir o jogo livremente, em qualquer meio.",
+    "en": "Real-time strategy with a household theme: instead of armies, you fight for space by building and defending your home with furniture. An unusual and creative NES game that calls for planning and reflexes at the same time. The author allows the game to be copied and distributed freely, in any medium."
+  }
+}

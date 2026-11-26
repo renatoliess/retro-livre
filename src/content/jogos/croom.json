@@ -1,0 +1,14 @@
+{
+  "titulo": "Concentration Room",
+  "console": "nes",
+  "autor": "Damian Yerrick (pinobatch)",
+  "ano": 2010,
+  "licenca": "GPL-3.0",
+  "prova_url": "https://github.com/pinobatch/croom-nes",
+  "rom": "croom.nes",
+  "prova_data": "2026-11-25",
+  "descricao": {
+    "pt": "O clássico jogo da memória no NES. Vire duas cartas por vez e fique com o par quando os símbolos combinarem. Há modo história e modo paciência para um jogador, partida para dois jogadores e disputa contra o computador. Bom para toda a família e para exercitar a memória.",
+    "en": "The classic memory game on the NES. Flip two cards at a time and keep the pair when the symbols match. There is a story mode and a solitaire mode for one player, a two-player match and a game against the computer. Fun for the whole family and good memory practice."
+  }
+}

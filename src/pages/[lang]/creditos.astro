@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { t, url, langPaths, type Lang } from '../../i18n';
+import { CONSOLES } from '../../consoles';
+import { EMULATORJS_URL, REPO_URL } from '../../site';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const jogos = (await getCollection('jogos')).sort((a, b) => a.data.titulo.localeCompare(b.data.titulo));
+const nucleos = [...new Map(Object.values(CONSOLES).map((c) => [c.nucleo, c.licencaNucleo])).entries()];
+---
+<Base lang={lang} titulo={t(lang, 'creditos.titulo')}>
+  <article class="texto">
+    <h1>{t(lang, 'creditos.titulo')}</h1>
+    <p>{t(lang, 'creditos.intro')}</p>
+    <h2>{t(lang, 'creditos.jogos')}</h2>
+    <ul>
+      {jogos.map((j) => (
+        <li>
+          <a href={url(`/${lang}/jogo/${j.id}/`)}>{j.data.titulo}</a> ({CONSOLES[j.data.console].nome}, {j.data.ano}) ·
+          {j.data.autor} · {j.data.licenca} · <a href={j.data.prova_url} rel="nofollow">{t(lang, 'jogo.prova')}</a>
+        </li>
+      ))}
+    </ul>
+    <h2>{t(lang, 'creditos.software')}</h2>
+    <ul>
+      <li><a href={EMULATORJS_URL}>EmulatorJS</a> · GPL-3.0</li>
+      {nucleos.map(([n, l]) => <li>{n} (libretro) · {l}</li>)}
+      <li><a href={REPO_URL}>{t(lang, 'site.nome')}</a> · GPL-3.0-or-later</li>
+    </ul>
+  </article>
+</Base>
+<style>.texto { max-width: 75ch; } li { margin-bottom: 0.4rem; }</style>
